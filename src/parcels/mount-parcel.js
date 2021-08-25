@@ -9,6 +9,7 @@ import {
   LOADING_SOURCE_CODE,
   SKIP_BECAUSE_BROKEN,
   toName,
+  UPDATING,
 } from "../applications/app.helpers.js";
 import { toBootstrapPromise } from "../lifecycles/bootstrap.js";
 import { toMountPromise } from "../lifecycles/mount.js";
@@ -92,7 +93,10 @@ export function mountParcel(config, customProps) {
     unmountThisParcel() {
       return mountPromise
         .then(() => {
-          if (parcel.status !== MOUNTED) {
+          if (
+            parcel.status !== MOUNTED
+            && parcel.status !== UPDATING
+          ) {
             throw Error(
               formatErrorMessage(
                 6,

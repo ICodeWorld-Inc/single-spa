@@ -3,13 +3,16 @@ import {
   NOT_MOUNTED,
   MOUNTED,
   SKIP_BECAUSE_BROKEN,
+  UPDATING,
 } from "../applications/app.helpers.js";
 import { handleAppError, transformErr } from "../applications/app-errors.js";
 import { reasonableTime } from "../applications/timeouts.js";
 
 export function toUnmountPromise(appOrParcel, hardFail) {
   return Promise.resolve().then(() => {
-    if (appOrParcel.status !== MOUNTED) {
+    if (appOrParcel.status !== MOUNTED
+      && appOrParcel.status !== UPDATING
+    ) {
       return appOrParcel;
     }
     appOrParcel.status = UNMOUNTING;
