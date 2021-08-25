@@ -1,11 +1,12 @@
 {
-  "name": "@ICodeWorld-Inc/single-spa",
-  "version": "5.9.3-icw0.1",
+  "name": "single-spa",
+  "version": "5.9.3",
   "description": "The router for easy microfrontends",
   "main": "lib/umd/single-spa.min.js",
   "types": "typings/single-spa.d.ts",
   "module": "lib/esm/single-spa.min.js",
   "scripts": {
+    "prepare": "yarn build",
     "build": "yarn clean && concurrently yarn:build:dev yarn:build:prod",
     "build:prod": "rollup -c --environment NODE_ENV:'production'",
     "build:dev": "rollup -c",
@@ -40,11 +41,8 @@
     "typings/single-spa.d.ts"
   ],
   "homepage": "https://single-spa.js.org",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ICodeWorld-Inc/single-spa.git"
-  },
-  "bugs": "https://github.com/@ICodeWorld-Inc/single-spa/issues",
+  "repository": "https://github.com/single-spa/single-spa",
+  "bugs": "https://github.com/single-spa/single-spa/issues",
   "keywords": [
     "microfrontends",
     "single",
@@ -58,7 +56,7 @@
     "microservices",
     "frontend"
   ],
-  "author": "@ICodeWorld-Inc",
+  "author": "Joel Denning",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
