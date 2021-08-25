@@ -8,6 +8,7 @@
   "globals": {
     "__DEV__": true
   },
+  "ignorePatterns": "lib",
   "plugins": ["es5"],
   "rules": {
     "es5/no-es6-methods": "error",
