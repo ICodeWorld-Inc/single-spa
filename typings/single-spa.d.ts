@@ -1,4 +1,4 @@
-declare module "single-spa" {
+declare module "@ICodeWorld-Inc/single-spa" {
   interface CustomProps {
     [str: string]: any;
     [num: number]: any;

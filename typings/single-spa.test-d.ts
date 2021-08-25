@@ -8,7 +8,7 @@ import {
   SingleSpaAppsByNewStatus,
   Parcel,
   ParcelConfig,
-} from "single-spa";
+} from "@ICodeWorld-Inc/single-spa";
 import { expectError, expectType } from "tsd";
 
 const planetsParcel: ParcelConfig<Planets> = {
